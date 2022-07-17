@@ -1,5 +1,9 @@
 const express = require("express");
-const { createAnnouncement } = require("../controllers/announcementController");
+const {
+  createAnnouncement,
+  getAllAnnouncements,
+  deleteAnnouncement,
+} = require("../controllers/announcementController");
 const {
   isAuthenticated,
   authorizeRoles,
@@ -14,5 +18,11 @@ router.post(
   authorizeRoles("admin"),
   createAnnouncement
 );
-
+router.get("/getAllAnnouncements", isAuthenticated, getAllAnnouncements);
+router.delete(
+  "/deleteAnnouncement/:id",
+  isAuthenticated,
+  authorizeRoles("admin"),
+  deleteAnnouncement
+);
 module.exports = router;

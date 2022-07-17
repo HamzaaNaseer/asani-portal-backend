@@ -1,0 +1,12 @@
+----------login
+http://localhost:4000/api/v1/login body {email,password} === response {success:true/false, token}
+----------logout
+"just delete the token from your local storage"
+
+---------ANNOUNCEMENTS---------
+------create announcement
+http://localhost:4000/api/v1/createannouncement body {token,title,description} response {success:true/false}
+------get all announcements
+http://localhost:4000/api/v1/getAllAnnouncements body{token} response {success,announcements}
+------delete announcements
+http://localhost:4000/api/v1/deleteAnnouncement/:id body{token} response {success:true/false} (Note: send the id of announcement to be deleted as a param)

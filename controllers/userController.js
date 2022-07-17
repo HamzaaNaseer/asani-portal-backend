@@ -15,7 +15,7 @@ exports.createUser = async (req, res) => {
       email,
       password: hash,
       address,
-      role: req.body.role ? req.body.role : "user",
+      role:req.body.role? req.body.role : "user"
     });
     //generating the token
 

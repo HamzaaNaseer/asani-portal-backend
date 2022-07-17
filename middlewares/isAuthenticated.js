@@ -29,7 +29,6 @@ exports.isAuthenticated = async (req, res, next) => {
 
 //middleware that checks that if a person requesting is authorized to access
 exports.authorizeRoles = (...roles) => {
-  console.log("entered authorize roles");
   //returning a function because i want to pass roles
   return (req, res, next) => {
     if (!roles.includes(req.user.role)) {

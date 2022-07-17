@@ -9,6 +9,11 @@ const SuggestionSchema = new Schema({
     required: true,
   },
 
+  title: {
+    type: String,
+    required: [true, "please provide some title"],
+  },
+
   description: {
     type: String,
     required: [true, "please enter the description of the ad"],
